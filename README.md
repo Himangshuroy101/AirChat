@@ -24,14 +24,12 @@
 You can download the pre-compiled Android APK directly from GitHub Releases:
 
 <p align="center">
-  <a href="https://github.com/YOUR_GITHUB_USERNAME/AirChat/releases/latest/download/AirChat.apk">
+  <a href="https://github.com/Himangshuroy101/AirChat/releases/download/v1.0.0/app-release.apk">
     <img src="https://img.shields.io/badge/⬇️_DOWNLOAD_LATEST_APK-v1.0.0-7C5CFC?style=for-the-badge&labelColor=1A1A2E" height="48" alt="Download APK" />
   </a>
 </p>
 
-> 💡 *Replace `YOUR_GITHUB_USERNAME` in the link above with your actual GitHub username once pushed.*
-> 
-> You can also browse all versions on the [**GitHub Releases Page**](https://github.com/YOUR_GITHUB_USERNAME/AirChat/releases).
+> You can also browse all versions on the [**GitHub Releases Page**](https://github.com/Himangshuroy101/AirChat/releases).
 
 ---
 
@@ -103,7 +101,8 @@ sequenceDiagram
 
 ## 📱 How to Install the APK on Android
 
-1. Download `AirChat.apk` on your Android device from the [Releases](https://github.com/YOUR_GITHUB_USERNAME/AirChat/releases) page.
+1. Download `AirChat.apk` on your Android device from the [Releases](https://github.com/Himangshuroy101/AirChat/releases) page.
+
 2. Tap the downloaded file in your Notifications or Downloads folder.
 3. If prompted by Android:
    - Select **Settings** -> **Allow from this source** (or "Install Unknown Apps").
@@ -124,7 +123,7 @@ sequenceDiagram
 
 ### Step 1: Clone Repository
 ```bash
-git clone https://github.com/YOUR_GITHUB_USERNAME/AirChat.git
+git clone https://github.com/Himangshuroy101/AirChat.git
 cd AirChat
 ```
 
@@ -176,3 +175,4 @@ Feel free to open an issue or submit a Pull Request.
 ## 📄 License
 
 This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+
