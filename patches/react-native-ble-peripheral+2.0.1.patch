@@ -1,0 +1,485 @@
+diff --git a/node_modules/react-native-ble-peripheral/android/.project b/node_modules/react-native-ble-peripheral/android/.project
+index 3964dd3..7fda223 100644
+--- a/node_modules/react-native-ble-peripheral/android/.project
++++ b/node_modules/react-native-ble-peripheral/android/.project
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <projectDescription>
+-	<name>android</name>
++	<name>react-native-ble-peripheral</name>
+ 	<comment>Project android created by Buildship.</comment>
+ 	<projects>
+ 	</projects>
+@@ -14,4 +14,15 @@
+ 	<natures>
+ 		<nature>org.eclipse.buildship.core.gradleprojectnature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1775131512135</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|\.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+diff --git a/node_modules/react-native-ble-peripheral/android/.settings/org.eclipse.buildship.core.prefs b/node_modules/react-native-ble-peripheral/android/.settings/org.eclipse.buildship.core.prefs
+index 8c80c93..1675490 100644
+--- a/node_modules/react-native-ble-peripheral/android/.settings/org.eclipse.buildship.core.prefs
++++ b/node_modules/react-native-ble-peripheral/android/.settings/org.eclipse.buildship.core.prefs
+@@ -1,2 +1,2 @@
+-#Thu Nov 30 08:38:54 IST 2017
+-connection.project.dir=
++connection.project.dir=../../../android
++eclipse.preferences.version=1
+diff --git a/node_modules/react-native-ble-peripheral/android/build.gradle b/node_modules/react-native-ble-peripheral/android/build.gradle
+index 9b5638c..73088f6 100644
+--- a/node_modules/react-native-ble-peripheral/android/build.gradle
++++ b/node_modules/react-native-ble-peripheral/android/build.gradle
+@@ -1,12 +1,12 @@
+ apply plugin: "com.android.library"
+ 
+ android {
+-    compileSdkVersion 23
++    compileSdkVersion 35
+     buildToolsVersion "23.0.3"
+ 
+     defaultConfig {
+         minSdkVersion 23
+-        targetSdkVersion 23
++        targetSdkVersion 35
+         versionCode 1
+         versionName "1.0"
+         ndk {
+@@ -15,8 +15,10 @@ android {
+     }
+ }
+ dependencies {
+-    compile fileTree(dir: "libs", include: ["*.jar"])
+-    compile "com.android.support:appcompat-v7:23.0.1"
+-    compile "com.facebook.react:react-native:+"  // From node_modules
++    implementation fileTree(dir: 'libs', include: ['*.jar'])
++    // implementation "com.android.support:appcompat-v7:23.0.1"
++    implementation "com.facebook.react:react-native:+"  // From node_modules
++    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
++    implementation 'androidx.appcompat:appcompat:1.4.0'
+ }
+ 
+diff --git a/node_modules/react-native-ble-peripheral/android/build/.transforms/2d71098d896f032b489ad9fc798dce63/results.bin b/node_modules/react-native-ble-peripheral/android/build/.transforms/2d71098d896f032b489ad9fc798dce63/results.bin
+new file mode 100644
+index 0000000..0d259dd
+--- /dev/null
++++ b/node_modules/react-native-ble-peripheral/android/build/.transforms/2d71098d896f032b489ad9fc798dce63/results.bin
+@@ -0,0 +1 @@
++o/classes
+diff --git a/node_modules/react-native-ble-peripheral/android/build/.transforms/2d71098d896f032b489ad9fc798dce63/transformed/classes/classes_dex/classes.dex b/node_modules/react-native-ble-peripheral/android/build/.transforms/2d71098d896f032b489ad9fc798dce63/transformed/classes/classes_dex/classes.dex
+new file mode 100644
+index 0000000..9e1f695
+Binary files /dev/null and b/node_modules/react-native-ble-peripheral/android/build/.transforms/2d71098d896f032b489ad9fc798dce63/transformed/classes/classes_dex/classes.dex differ
+diff --git a/node_modules/react-native-ble-peripheral/android/build/.transforms/37b182c6c3176dd18a84f2729157ac44/results.bin b/node_modules/react-native-ble-peripheral/android/build/.transforms/37b182c6c3176dd18a84f2729157ac44/results.bin
+new file mode 100644
+index 0000000..0d259dd
+--- /dev/null
++++ b/node_modules/react-native-ble-peripheral/android/build/.transforms/37b182c6c3176dd18a84f2729157ac44/results.bin
+@@ -0,0 +1 @@
++o/classes
+diff --git a/node_modules/react-native-ble-peripheral/android/build/.transforms/37b182c6c3176dd18a84f2729157ac44/transformed/classes/classes_dex/classes.dex b/node_modules/react-native-ble-peripheral/android/build/.transforms/37b182c6c3176dd18a84f2729157ac44/transformed/classes/classes_dex/classes.dex
+new file mode 100644
+index 0000000..aa62065
+Binary files /dev/null and b/node_modules/react-native-ble-peripheral/android/build/.transforms/37b182c6c3176dd18a84f2729157ac44/transformed/classes/classes_dex/classes.dex differ
+diff --git a/node_modules/react-native-ble-peripheral/android/build/generated/source/buildConfig/debug/com/himelbrand/ble/peripheral/BuildConfig.java b/node_modules/react-native-ble-peripheral/android/build/generated/source/buildConfig/debug/com/himelbrand/ble/peripheral/BuildConfig.java
+new file mode 100644
+index 0000000..829fd3d
+--- /dev/null
++++ b/node_modules/react-native-ble-peripheral/android/build/generated/source/buildConfig/debug/com/himelbrand/ble/peripheral/BuildConfig.java
+@@ -0,0 +1,10 @@
++/**
++ * Automatically generated file. DO NOT MODIFY
++ */
++package com.himelbrand.ble.peripheral;
++
++public final class BuildConfig {
++  public static final boolean DEBUG = Boolean.parseBoolean("true");
++  public static final String LIBRARY_PACKAGE_NAME = "com.himelbrand.ble.peripheral";
++  public static final String BUILD_TYPE = "debug";
++}
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/aapt_friendly_merged_manifests/debug/processDebugManifest/aapt/AndroidManifest.xml b/node_modules/react-native-ble-peripheral/android/build/intermediates/aapt_friendly_merged_manifests/debug/processDebugManifest/aapt/AndroidManifest.xml
+new file mode 100644
+index 0000000..f242a55
+--- /dev/null
++++ b/node_modules/react-native-ble-peripheral/android/build/intermediates/aapt_friendly_merged_manifests/debug/processDebugManifest/aapt/AndroidManifest.xml
+@@ -0,0 +1,10 @@
++<?xml version="1.0" encoding="utf-8"?>
++<manifest xmlns:android="http://schemas.android.com/apk/res/android"
++    package="com.himelbrand.ble.peripheral" >
++
++    <uses-sdk android:minSdkVersion="23" />
++
++    <uses-permission android:name="android.permission.BLUETOOTH" />
++    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
++
++</manifest>
+\ No newline at end of file
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/aapt_friendly_merged_manifests/debug/processDebugManifest/aapt/output-metadata.json b/node_modules/react-native-ble-peripheral/android/build/intermediates/aapt_friendly_merged_manifests/debug/processDebugManifest/aapt/output-metadata.json
+new file mode 100644
+index 0000000..8280cde
+--- /dev/null
++++ b/node_modules/react-native-ble-peripheral/android/build/intermediates/aapt_friendly_merged_manifests/debug/processDebugManifest/aapt/output-metadata.json
+@@ -0,0 +1,18 @@
++{
++  "version": 3,
++  "artifactType": {
++    "type": "AAPT_FRIENDLY_MERGED_MANIFESTS",
++    "kind": "Directory"
++  },
++  "applicationId": "com.himelbrand.ble.peripheral",
++  "variantName": "debug",
++  "elements": [
++    {
++      "type": "SINGLE",
++      "filters": [],
++      "attributes": [],
++      "outputFile": "AndroidManifest.xml"
++    }
++  ],
++  "elementType": "File"
++}
+\ No newline at end of file
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/aar_metadata/debug/writeDebugAarMetadata/aar-metadata.properties b/node_modules/react-native-ble-peripheral/android/build/intermediates/aar_metadata/debug/writeDebugAarMetadata/aar-metadata.properties
+new file mode 100644
+index 0000000..1211b1e
+--- /dev/null
++++ b/node_modules/react-native-ble-peripheral/android/build/intermediates/aar_metadata/debug/writeDebugAarMetadata/aar-metadata.properties
+@@ -0,0 +1,6 @@
++aarFormatVersion=1.0
++aarMetadataVersion=1.0
++minCompileSdk=1
++minCompileSdkExtension=0
++minAndroidGradlePluginVersion=1.0.0
++coreLibraryDesugaringEnabled=false
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/annotation_processor_list/debug/javaPreCompileDebug/annotationProcessors.json b/node_modules/react-native-ble-peripheral/android/build/intermediates/annotation_processor_list/debug/javaPreCompileDebug/annotationProcessors.json
+new file mode 100644
+index 0000000..9e26dfe
+--- /dev/null
++++ b/node_modules/react-native-ble-peripheral/android/build/intermediates/annotation_processor_list/debug/javaPreCompileDebug/annotationProcessors.json
+@@ -0,0 +1 @@
++{}
+\ No newline at end of file
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/compile_library_classes_jar/debug/bundleLibCompileToJarDebug/classes.jar b/node_modules/react-native-ble-peripheral/android/build/intermediates/compile_library_classes_jar/debug/bundleLibCompileToJarDebug/classes.jar
+new file mode 100644
+index 0000000..046d974
+Binary files /dev/null and b/node_modules/react-native-ble-peripheral/android/build/intermediates/compile_library_classes_jar/debug/bundleLibCompileToJarDebug/classes.jar differ
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/compile_r_class_jar/debug/generateDebugRFile/R.jar b/node_modules/react-native-ble-peripheral/android/build/intermediates/compile_r_class_jar/debug/generateDebugRFile/R.jar
+new file mode 100644
+index 0000000..367db2c
+Binary files /dev/null and b/node_modules/react-native-ble-peripheral/android/build/intermediates/compile_r_class_jar/debug/generateDebugRFile/R.jar differ
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/compile_symbol_list/debug/generateDebugRFile/R.txt b/node_modules/react-native-ble-peripheral/android/build/intermediates/compile_symbol_list/debug/generateDebugRFile/R.txt
+new file mode 100644
+index 0000000..e69de29
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties b/node_modules/react-native-ble-peripheral/android/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties
+new file mode 100644
+index 0000000..496914b
+--- /dev/null
++++ b/node_modules/react-native-ble-peripheral/android/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties
+@@ -0,0 +1 @@
++#Tue May 19 16:14:33 IST 2026
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/incremental/debug/packageDebugResources/merger.xml b/node_modules/react-native-ble-peripheral/android/build/intermediates/incremental/debug/packageDebugResources/merger.xml
+new file mode 100644
+index 0000000..1082537
+--- /dev/null
++++ b/node_modules/react-native-ble-peripheral/android/build/intermediates/incremental/debug/packageDebugResources/merger.xml
+@@ -0,0 +1,2 @@
++<?xml version="1.0" encoding="utf-8"?>
++<merger version="3"><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\MyRNApps\AirChat\node_modules\react-native-ble-peripheral\android\src\main\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main" generated-set="main$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\MyRNApps\AirChat\node_modules\react-native-ble-peripheral\android\src\main\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\MyRNApps\AirChat\node_modules\react-native-ble-peripheral\android\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\MyRNApps\AirChat\node_modules\react-native-ble-peripheral\android\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="generated$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\MyRNApps\AirChat\node_modules\react-native-ble-peripheral\android\build\generated\res\resValues\debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="generated" generated-set="generated$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\MyRNApps\AirChat\node_modules\react-native-ble-peripheral\android\build\generated\res\resValues\debug"/></dataSet><mergedItems/></merger>
+\ No newline at end of file
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/incremental/mergeDebugAssets/merger.xml b/node_modules/react-native-ble-peripheral/android/build/intermediates/incremental/mergeDebugAssets/merger.xml
+new file mode 100644
+index 0000000..fc805b7
+--- /dev/null
++++ b/node_modules/react-native-ble-peripheral/android/build/intermediates/incremental/mergeDebugAssets/merger.xml
+@@ -0,0 +1,2 @@
++<?xml version="1.0" encoding="utf-8"?>
++<merger version="3"><dataSet config="main" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\MyRNApps\AirChat\node_modules\react-native-ble-peripheral\android\src\main\assets"/></dataSet><dataSet config="debug" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\MyRNApps\AirChat\node_modules\react-native-ble-peripheral\android\src\debug\assets"/></dataSet><dataSet config="generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\MyRNApps\AirChat\node_modules\react-native-ble-peripheral\android\build\intermediates\shader_assets\debug\compileDebugShaders\out"/></dataSet></merger>
+\ No newline at end of file
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml b/node_modules/react-native-ble-peripheral/android/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml
+new file mode 100644
+index 0000000..effaeb1
+--- /dev/null
++++ b/node_modules/react-native-ble-peripheral/android/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml
+@@ -0,0 +1,2 @@
++<?xml version="1.0" encoding="utf-8"?>
++<merger version="3"><dataSet config="main" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\MyRNApps\AirChat\node_modules\react-native-ble-peripheral\android\src\main\jniLibs"/></dataSet><dataSet config="debug" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\MyRNApps\AirChat\node_modules\react-native-ble-peripheral\android\src\debug\jniLibs"/></dataSet></merger>
+\ No newline at end of file
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/incremental/mergeDebugShaders/merger.xml b/node_modules/react-native-ble-peripheral/android/build/intermediates/incremental/mergeDebugShaders/merger.xml
+new file mode 100644
+index 0000000..f149a53
+--- /dev/null
++++ b/node_modules/react-native-ble-peripheral/android/build/intermediates/incremental/mergeDebugShaders/merger.xml
+@@ -0,0 +1,2 @@
++<?xml version="1.0" encoding="utf-8"?>
++<merger version="3"><dataSet config="main" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\MyRNApps\AirChat\node_modules\react-native-ble-peripheral\android\src\main\shaders"/></dataSet><dataSet config="debug" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\MyRNApps\AirChat\node_modules\react-native-ble-peripheral\android\src\debug\shaders"/></dataSet></merger>
+\ No newline at end of file
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/himelbrand/ble/peripheral/BuildConfig.class b/node_modules/react-native-ble-peripheral/android/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/himelbrand/ble/peripheral/BuildConfig.class
+new file mode 100644
+index 0000000..104823c
+Binary files /dev/null and b/node_modules/react-native-ble-peripheral/android/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/himelbrand/ble/peripheral/BuildConfig.class differ
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/himelbrand/ble/peripheral/RNBLEModule$1.class b/node_modules/react-native-ble-peripheral/android/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/himelbrand/ble/peripheral/RNBLEModule$1.class
+new file mode 100644
+index 0000000..13506b2
+Binary files /dev/null and b/node_modules/react-native-ble-peripheral/android/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/himelbrand/ble/peripheral/RNBLEModule$1.class differ
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/himelbrand/ble/peripheral/RNBLEModule$2.class b/node_modules/react-native-ble-peripheral/android/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/himelbrand/ble/peripheral/RNBLEModule$2.class
+new file mode 100644
+index 0000000..92cacd4
+Binary files /dev/null and b/node_modules/react-native-ble-peripheral/android/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/himelbrand/ble/peripheral/RNBLEModule$2.class differ
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/himelbrand/ble/peripheral/RNBLEModule.class b/node_modules/react-native-ble-peripheral/android/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/himelbrand/ble/peripheral/RNBLEModule.class
+new file mode 100644
+index 0000000..3e0f484
+Binary files /dev/null and b/node_modules/react-native-ble-peripheral/android/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/himelbrand/ble/peripheral/RNBLEModule.class differ
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/himelbrand/ble/peripheral/RNBLEPackage.class b/node_modules/react-native-ble-peripheral/android/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/himelbrand/ble/peripheral/RNBLEPackage.class
+new file mode 100644
+index 0000000..2382f9d
+Binary files /dev/null and b/node_modules/react-native-ble-peripheral/android/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/himelbrand/ble/peripheral/RNBLEPackage.class differ
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/local_only_symbol_list/debug/parseDebugLocalResources/R-def.txt b/node_modules/react-native-ble-peripheral/android/build/intermediates/local_only_symbol_list/debug/parseDebugLocalResources/R-def.txt
+new file mode 100644
+index 0000000..78ac5b8
+--- /dev/null
++++ b/node_modules/react-native-ble-peripheral/android/build/intermediates/local_only_symbol_list/debug/parseDebugLocalResources/R-def.txt
+@@ -0,0 +1,2 @@
++R_DEF: Internal format may change without notice
++local
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/manifest_merge_blame_file/debug/processDebugManifest/manifest-merger-blame-debug-report.txt b/node_modules/react-native-ble-peripheral/android/build/intermediates/manifest_merge_blame_file/debug/processDebugManifest/manifest-merger-blame-debug-report.txt
+new file mode 100644
+index 0000000..03bef14
+--- /dev/null
++++ b/node_modules/react-native-ble-peripheral/android/build/intermediates/manifest_merge_blame_file/debug/processDebugManifest/manifest-merger-blame-debug-report.txt
+@@ -0,0 +1,14 @@
++1<?xml version="1.0" encoding="utf-8"?>
++2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
++3    package="com.himelbrand.ble.peripheral" >
++4
++5    <uses-sdk android:minSdkVersion="23" />
++6
++7    <uses-permission android:name="android.permission.BLUETOOTH" />
++7-->D:\MyRNApps\AirChat\node_modules\react-native-ble-peripheral\android\src\main\AndroidManifest.xml:3:5-68
++7-->D:\MyRNApps\AirChat\node_modules\react-native-ble-peripheral\android\src\main\AndroidManifest.xml:3:22-65
++8    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
++8-->D:\MyRNApps\AirChat\node_modules\react-native-ble-peripheral\android\src\main\AndroidManifest.xml:4:5-74
++8-->D:\MyRNApps\AirChat\node_modules\react-native-ble-peripheral\android\src\main\AndroidManifest.xml:4:22-71
++9
++10</manifest>
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml b/node_modules/react-native-ble-peripheral/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml
+new file mode 100644
+index 0000000..f242a55
+--- /dev/null
++++ b/node_modules/react-native-ble-peripheral/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml
+@@ -0,0 +1,10 @@
++<?xml version="1.0" encoding="utf-8"?>
++<manifest xmlns:android="http://schemas.android.com/apk/res/android"
++    package="com.himelbrand.ble.peripheral" >
++
++    <uses-sdk android:minSdkVersion="23" />
++
++    <uses-permission android:name="android.permission.BLUETOOTH" />
++    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
++
++</manifest>
+\ No newline at end of file
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/navigation_json/debug/extractDeepLinksDebug/navigation.json b/node_modules/react-native-ble-peripheral/android/build/intermediates/navigation_json/debug/extractDeepLinksDebug/navigation.json
+new file mode 100644
+index 0000000..0637a08
+--- /dev/null
++++ b/node_modules/react-native-ble-peripheral/android/build/intermediates/navigation_json/debug/extractDeepLinksDebug/navigation.json
+@@ -0,0 +1 @@
++[]
+\ No newline at end of file
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/nested_resources_validation_report/debug/generateDebugResources/nestedResourcesValidationReport.txt b/node_modules/react-native-ble-peripheral/android/build/intermediates/nested_resources_validation_report/debug/generateDebugResources/nestedResourcesValidationReport.txt
+new file mode 100644
+index 0000000..08f4ebe
+--- /dev/null
++++ b/node_modules/react-native-ble-peripheral/android/build/intermediates/nested_resources_validation_report/debug/generateDebugResources/nestedResourcesValidationReport.txt
+@@ -0,0 +1 @@
++0 Warning/Error
+\ No newline at end of file
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/runtime_library_classes_jar/debug/bundleLibRuntimeToJarDebug/classes.jar b/node_modules/react-native-ble-peripheral/android/build/intermediates/runtime_library_classes_jar/debug/bundleLibRuntimeToJarDebug/classes.jar
+new file mode 100644
+index 0000000..abfda53
+Binary files /dev/null and b/node_modules/react-native-ble-peripheral/android/build/intermediates/runtime_library_classes_jar/debug/bundleLibRuntimeToJarDebug/classes.jar differ
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/symbol_list_with_package_name/debug/generateDebugRFile/package-aware-r.txt b/node_modules/react-native-ble-peripheral/android/build/intermediates/symbol_list_with_package_name/debug/generateDebugRFile/package-aware-r.txt
+new file mode 100644
+index 0000000..cce422d
+--- /dev/null
++++ b/node_modules/react-native-ble-peripheral/android/build/intermediates/symbol_list_with_package_name/debug/generateDebugRFile/package-aware-r.txt
+@@ -0,0 +1 @@
++com.himelbrand.ble.peripheral
+diff --git a/node_modules/react-native-ble-peripheral/android/build/outputs/logs/manifest-merger-debug-report.txt b/node_modules/react-native-ble-peripheral/android/build/outputs/logs/manifest-merger-debug-report.txt
+new file mode 100644
+index 0000000..ec5820e
+--- /dev/null
++++ b/node_modules/react-native-ble-peripheral/android/build/outputs/logs/manifest-merger-debug-report.txt
+@@ -0,0 +1,25 @@
++-- Merging decision tree log ---
++manifest
++ADDED from D:\MyRNApps\AirChat\node_modules\react-native-ble-peripheral\android\src\main\AndroidManifest.xml:1:1-5:12
++INJECTED from D:\MyRNApps\AirChat\node_modules\react-native-ble-peripheral\android\src\main\AndroidManifest.xml:1:1-5:12
++	package
++		ADDED from D:\MyRNApps\AirChat\node_modules\react-native-ble-peripheral\android\src\main\AndroidManifest.xml:2:5-44
++		INJECTED from D:\MyRNApps\AirChat\node_modules\react-native-ble-peripheral\android\src\main\AndroidManifest.xml
++	xmlns:android
++		ADDED from D:\MyRNApps\AirChat\node_modules\react-native-ble-peripheral\android\src\main\AndroidManifest.xml:1:11-69
++uses-permission#android.permission.BLUETOOTH
++ADDED from D:\MyRNApps\AirChat\node_modules\react-native-ble-peripheral\android\src\main\AndroidManifest.xml:3:5-68
++	android:name
++		ADDED from D:\MyRNApps\AirChat\node_modules\react-native-ble-peripheral\android\src\main\AndroidManifest.xml:3:22-65
++uses-permission#android.permission.BLUETOOTH_ADMIN
++ADDED from D:\MyRNApps\AirChat\node_modules\react-native-ble-peripheral\android\src\main\AndroidManifest.xml:4:5-74
++	android:name
++		ADDED from D:\MyRNApps\AirChat\node_modules\react-native-ble-peripheral\android\src\main\AndroidManifest.xml:4:22-71
++uses-sdk
++INJECTED from D:\MyRNApps\AirChat\node_modules\react-native-ble-peripheral\android\src\main\AndroidManifest.xml reason: use-sdk injection requested
++INJECTED from D:\MyRNApps\AirChat\node_modules\react-native-ble-peripheral\android\src\main\AndroidManifest.xml
++INJECTED from D:\MyRNApps\AirChat\node_modules\react-native-ble-peripheral\android\src\main\AndroidManifest.xml
++	android:targetSdkVersion
++		INJECTED from D:\MyRNApps\AirChat\node_modules\react-native-ble-peripheral\android\src\main\AndroidManifest.xml
++	android:minSdkVersion
++		INJECTED from D:\MyRNApps\AirChat\node_modules\react-native-ble-peripheral\android\src\main\AndroidManifest.xml
+diff --git a/node_modules/react-native-ble-peripheral/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/RNBLEModule$1.class.uniqueId3 b/node_modules/react-native-ble-peripheral/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/RNBLEModule$1.class.uniqueId3
+new file mode 100644
+index 0000000..8d7b278
+Binary files /dev/null and b/node_modules/react-native-ble-peripheral/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/RNBLEModule$1.class.uniqueId3 differ
+diff --git a/node_modules/react-native-ble-peripheral/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/RNBLEModule$2.class.uniqueId1 b/node_modules/react-native-ble-peripheral/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/RNBLEModule$2.class.uniqueId1
+new file mode 100644
+index 0000000..257f610
+Binary files /dev/null and b/node_modules/react-native-ble-peripheral/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/RNBLEModule$2.class.uniqueId1 differ
+diff --git a/node_modules/react-native-ble-peripheral/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/RNBLEModule.class.uniqueId0 b/node_modules/react-native-ble-peripheral/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/RNBLEModule.class.uniqueId0
+new file mode 100644
+index 0000000..11302ed
+Binary files /dev/null and b/node_modules/react-native-ble-peripheral/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/RNBLEModule.class.uniqueId0 differ
+diff --git a/node_modules/react-native-ble-peripheral/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/RNBLEPackage.class.uniqueId2 b/node_modules/react-native-ble-peripheral/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/RNBLEPackage.class.uniqueId2
+new file mode 100644
+index 0000000..2382f9d
+Binary files /dev/null and b/node_modules/react-native-ble-peripheral/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/RNBLEPackage.class.uniqueId2 differ
+diff --git a/node_modules/react-native-ble-peripheral/android/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin b/node_modules/react-native-ble-peripheral/android/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin
+new file mode 100644
+index 0000000..f23f8c5
+Binary files /dev/null and b/node_modules/react-native-ble-peripheral/android/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin differ
+diff --git a/node_modules/react-native-ble-peripheral/android/src/main/java/com/himelbrand/ble/peripheral/RNBLEModule.java b/node_modules/react-native-ble-peripheral/android/src/main/java/com/himelbrand/ble/peripheral/RNBLEModule.java
+index 71a5f60..ef5f236 100644
+--- a/node_modules/react-native-ble-peripheral/android/src/main/java/com/himelbrand/ble/peripheral/RNBLEModule.java
++++ b/node_modules/react-native-ble-peripheral/android/src/main/java/com/himelbrand/ble/peripheral/RNBLEModule.java
+@@ -22,7 +22,7 @@ import android.content.Context;
+ import android.os.Bundle;
+ import android.os.Handler;
+ import android.os.ParcelUuid;
+-import android.support.v7.app.AppCompatActivity;
++import androidx.appcompat.app.AppCompatActivity;
+ import android.text.TextUtils;
+ import android.util.Log;
+ 
+@@ -52,6 +52,7 @@ import com.facebook.react.bridge.Promise;
+ import com.facebook.react.bridge.WritableMap;
+ import com.facebook.react.bridge.Arguments;
+ import com.facebook.react.bridge.WritableArray;
++import com.facebook.react.modules.core.DeviceEventManagerModule;
+ 
+ 
+ 
+@@ -62,6 +63,14 @@ import com.facebook.react.bridge.WritableArray;
+ public class RNBLEModule extends ReactContextBaseJavaModule{
+ 
+     ReactApplicationContext reactContext;
++
++    // Helper to send events to JavaScript
++    private void sendEvent(String eventName, WritableMap params) {
++        reactContext
++            .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
++            .emit(eventName, params);
++    }
++
+     HashMap<String, BluetoothGattService> servicesMap;
+     HashSet<BluetoothDevice> mBluetoothDevices;
+     BluetoothManager mBluetoothManager;
+@@ -106,6 +115,15 @@ public class RNBLEModule extends ReactContextBaseJavaModule{
+     public void addCharacteristicToService(String serviceUUID, String uuid, Integer permissions, Integer properties) {
+         UUID CHAR_UUID = UUID.fromString(uuid);
+         BluetoothGattCharacteristic tempChar = new BluetoothGattCharacteristic(CHAR_UUID, properties, permissions);
++        if ((properties & BluetoothGattCharacteristic.PROPERTY_NOTIFY) != 0 ||
++            (properties & BluetoothGattCharacteristic.PROPERTY_INDICATE) != 0) {
++            BluetoothGattDescriptor cccd = new BluetoothGattDescriptor(
++                UUID.fromString("00002902-0000-1000-8000-00805F9B34FB"),
++                BluetoothGattDescriptor.PERMISSION_READ | BluetoothGattDescriptor.PERMISSION_WRITE
++            );
++            cccd.setValue(BluetoothGattDescriptor.DISABLE_NOTIFICATION_VALUE);
++            tempChar.addDescriptor(cccd);
++        }
+         this.servicesMap.get(serviceUUID).addCharacteristic(tempChar);
+     }
+ 
+@@ -113,14 +131,24 @@ public class RNBLEModule extends ReactContextBaseJavaModule{
+         @Override
+         public void onConnectionStateChange(BluetoothDevice device, final int status, int newState) {
+             super.onConnectionStateChange(device, status, newState);
++            Log.i("RNBLEModule", "onConnectionStateChange device=" + device.toString() + " status=" + status + " newState=" + newState);
+             if (status == BluetoothGatt.GATT_SUCCESS) {
+                 if (newState == BluetoothGatt.STATE_CONNECTED) {
+                     mBluetoothDevices.add(device);
++                    WritableMap map = Arguments.createMap();
++                    map.putString("device", device.toString());
++                    sendEvent("onConnected", map);
+                 } else if (newState == BluetoothGatt.STATE_DISCONNECTED) {
+                     mBluetoothDevices.remove(device);
++                    WritableMap map = Arguments.createMap();
++                    map.putString("device", device.toString());
++                    sendEvent("onDisconnected", map);
+                 }
+             } else {
+                 mBluetoothDevices.remove(device);
++                WritableMap map = Arguments.createMap();
++                map.putString("device", device.toString());
++                sendEvent("onDisconnected", map);
+             }
+         }
+ 
+@@ -142,20 +170,39 @@ public class RNBLEModule extends ReactContextBaseJavaModule{
+             super.onNotificationSent(device, status);
+         }
+ 
++        @Override
++        public void onDescriptorWriteRequest(BluetoothDevice device, int requestId,
++                                             BluetoothGattDescriptor descriptor, boolean preparedWrite,
++                                             boolean responseNeeded, int offset, byte[] value) {
++            super.onDescriptorWriteRequest(device, requestId, descriptor, preparedWrite, responseNeeded, offset, value);
++            mBluetoothDevices.add(device);
++            descriptor.setValue(value);
++            if (responseNeeded) {
++                mGattServer.sendResponse(device, requestId, BluetoothGatt.GATT_SUCCESS, offset, value);
++            }
++        }
++
+         @Override
+         public void onCharacteristicWriteRequest(BluetoothDevice device, int requestId,
+                                                  BluetoothGattCharacteristic characteristic, boolean preparedWrite, boolean responseNeeded,
+                                                  int offset, byte[] value) {
+             super.onCharacteristicWriteRequest(device, requestId, characteristic, preparedWrite,
+                     responseNeeded, offset, value);
++            mBluetoothDevices.add(device);
++            Log.i("RNBLEModule", "onCharacteristicWriteRequest from " + device.toString() + " responseNeeded=" + responseNeeded);
+             characteristic.setValue(value);
+             WritableMap map = Arguments.createMap();
+             WritableArray data = Arguments.createArray();
+             for (byte b : value) {
+-                data.pushInt((int) b);
++                data.pushInt((int) (b & 0xFF));
+             }
+             map.putArray("data", data);
+             map.putString("device", device.toString());
++
++            // CRITICAL FIX: Actually emit the event to JavaScript!
++            sendEvent("onWrite", map);
++
++            // Always send GATT response to prevent write-with-response from hanging
+             if (responseNeeded) {
+                 mGattServer.sendResponse(device, requestId, BluetoothGatt.GATT_SUCCESS, offset, value);
+             }
