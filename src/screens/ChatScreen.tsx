@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import {
   View, Text, StyleSheet, Animated, Dimensions,
   TouchableOpacity, FlatList, TextInput, KeyboardAvoidingView,
-  Platform, Vibration, Modal, Alert,
+  Platform, Vibration, Modal, Alert, Keyboard,
 } from 'react-native';
 import { Message } from '../hooks/useBLE';
 import RichMessageBubble from '../components/RichMessageBubble';
@@ -74,12 +74,21 @@ export default function ChatScreen({
     );
   };
 
-  // Auto-scroll
+  // Auto-scroll when messages update
   useEffect(() => {
     if (messages.length > 0) {
       setTimeout(() => flatListRef.current?.scrollToEnd({ animated: true }), 100);
     }
   }, [messages]);
+
+  // Auto-scroll when keyboard opens
+  useEffect(() => {
+    const showEvent = Platform.OS === 'ios' ? 'keyboardWillShow' : 'keyboardDidShow';
+    const sub = Keyboard.addListener(showEvent, () => {
+      setTimeout(() => flatListRef.current?.scrollToEnd({ animated: true }), 100);
+    });
+    return () => sub.remove();
+  }, []);
 
   const handleTextChange = (text: string) => {
     setInputText(text);
@@ -170,7 +179,8 @@ export default function ChatScreen({
   return (
     <KeyboardAvoidingView
       style={styles.root}
-      behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      keyboardVerticalOffset={Platform.OS === 'ios' ? 10 : 0}
     >
       {/* Background pattern */}
       <View style={styles.bgPattern}>
@@ -246,7 +256,10 @@ export default function ChatScreen({
         data={messages}
         keyExtractor={item => item.id}
         renderItem={renderMessage}
+        style={styles.messagesContainer}
         contentContainerStyle={styles.messagesList}
+        keyboardDismissMode="on-drag"
+        keyboardShouldPersistTaps="handled"
         ListEmptyComponent={
           <View style={styles.emptyChat}>
             <Text style={styles.emptyChatIcon}>{partnerAvatar || '👋'}</Text>
@@ -439,6 +452,9 @@ const styles = StyleSheet.create({
     fontSize: 13,
   },
 
+  messagesContainer: {
+    flex: 1,
+  },
   messagesList: { padding: 12, flexGrow: 1 },
   msgRow: { marginVertical: 4 },
   msgRowRight: { alignItems: 'flex-end' },
